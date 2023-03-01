@@ -2,13 +2,13 @@ from flask import Flask, render_template, request
 #import openai
 import datetime 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/movie-details", methods=("GET", "POST"))
+@application.route("/", methods=("GET", "POST"))
 def root():
-    return 'No request setup for this route use other '
+    return 'Howday!! its working check /time to find current time'
 
-@app.route("/time", methods=("GET", "POST"))
+@application.route("/time", methods=("GET", "POST"))
 def time():
     local_timezone = str(datetime.datetime.utcnow().astimezone().tzinfo)
     now = str(datetime.datetime.now())+' '+local_timezone
@@ -16,4 +16,4 @@ def time():
     return now
 
 if __name__ == '__main__':
-    app.run( port=80 ,debug=True)
+    app.run(port=8000,debug=True)
