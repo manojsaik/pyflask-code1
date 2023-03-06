@@ -6,7 +6,7 @@ application = Flask(__name__)
 
 @application.route("/", methods=("GET", "POST"))
 def root():
-    return 'Howday!! its working check /time to find current time'
+    return 'Howday!! its working check /time to find current time from github'
 
 @application.route("/time", methods=("GET", "POST"))
 def time():
